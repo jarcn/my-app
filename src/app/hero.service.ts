@@ -49,11 +49,11 @@ export class HeroService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Hero> {
+  create(name: string, id: number): Promise<Hero> {
     return this.http
-      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.heroesUrl, JSON.stringify({name: name, id: id}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Hero)
+      .then(res => res.json() as Hero)
       .catch(this.handleError);
   }
 

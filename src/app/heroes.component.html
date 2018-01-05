@@ -1,12 +1,14 @@
 <h2>王者英雄</h2>
 <div>
+  <label>英雄编号</label> <input #heroId />
+  <br>
   <label>英雄名称</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button (click)="add(heroName.value,heroId.value); heroName.value='';heroId.value=''">
     添加
   </button>
 </div>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes"
+  <li *ngFor="let hero of heroes "
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.name}}

@@ -23,12 +23,12 @@ export class HeroesComponent implements OnInit {
       .then(heroes => this.heroes = heroes);
   }
 
-  add(name: string): void {
+  add(name: string, id: number): void {
     name = name.trim();
     if (!name) {
       return;
     }
-    this.heroService.create(name)
+    this.heroService.create(name, id)
       .then(hero => {
         this.heroes.push(hero);
         this.selectedHero = null;
