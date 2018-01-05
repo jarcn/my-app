@@ -1,9 +1,16 @@
 <h2>王者英雄</h2>
+<div>
+  <label>英雄名称</label> <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">
+    添加
+  </button>
+</div>
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedHero">
