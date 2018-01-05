@@ -1,0 +1,21 @@
+<!--
+  组件模版,数据渲染,解析遵从angular语法
+-->
+
+<div *ngIf="hero">
+  <h2>{{hero.name}} 详情!</h2>
+  <div>
+    <label>编号: </label>{{hero.id}}</div>
+  <div>
+    <label>姓名: </label>
+    <input [(ngModel)]="hero.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">返回列表</button>
+</div>
+
+
+<!--
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
